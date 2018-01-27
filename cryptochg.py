@@ -9,11 +9,9 @@ from pandas.tools.plotting import table
 url = 'https://api.coinmarketcap.com/v1/ticker/'
 data = requests.get(url).json()
 
-# create directory for dataframe image
 if not os.path.exists('df_image'):
     os.makedirs('df_image')
 
-# move to new directory
 os.chdir('df_image')
 
 
@@ -44,7 +42,7 @@ def top_increase():
 
     df = pd.DataFrame(raw_data_increase, columns=['Rank', 'Name', 'Change last 24h (%)', 'Change last 7d (%)', 'Price(USD)'])
 
-    # print(df.to_string(index=False))
+    print(df.to_string(index=False))
 
     # set fig size
     fig, ax = plt.subplots(figsize=(9.5, 2.7))
@@ -66,7 +64,6 @@ def top_increase():
 
 top_increase()
 
-# credentials to login to twitter api
 consumer_key = 'BOT_CONSUMER_KEY'
 consumer_secret = 'BOT_CONSUMER_SECRET'
 access_token = 'BOT_ACCESS_TOKEN'
@@ -84,7 +81,7 @@ while True:
                                                'value increased the most in the last '
                                                '24 hours. #Cryptocurrency #Crypto')
 
-        time.sleep(10800)
+        time.sleep(21600)
 
 
 

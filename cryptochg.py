@@ -45,7 +45,7 @@ def top_increase():
     print(df.to_string(index=False))
 
     # set fig size
-    fig, ax = plt.subplots(figsize=(9.5, 2.7))
+    fig, ax = plt.subplots(figsize=(9.5, 4))
     # no axes
     ax.xaxis.set_visible(False)
     ax.yaxis.set_visible(False)
@@ -55,9 +55,9 @@ def top_increase():
     tab = table(ax, df, rowLabels=['']*df.shape[0], loc='center')
     # set font manually
     tab.auto_set_font_size(False)
-    tab.set_fontsize(10)
+    tab.set_fontsize(7.6)
     # set scale
-    tab.scale(1, 2.5)
+    tab.scale(1, 3.5)
     # save the result
     plt.savefig('cryptopinc.png')
 
